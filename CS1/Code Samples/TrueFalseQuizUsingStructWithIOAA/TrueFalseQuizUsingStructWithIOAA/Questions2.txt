@@ -1,0 +1,20 @@
+Earth is flat?
+0
+Moon is a satellite of Earth.
+1
+Water freezes at zero Degree Farenheit.
+0
+American flag has 49 stars on it.
+0
+Capital of New York is New York City.
+0
+Capital of England is London.
+1
+South pole is an ice cap.
+0
+Mozart was born in USA.
+0
+In America you can drive without a license.
+0
+George Washington was First American President.
+1
