@@ -36,6 +36,7 @@ int main()
 	cin >> years;
 	string codename = "";
 	double basesalary = 0.00;
+	
 	switch (code)
 	{
 	case 'S':
@@ -59,19 +60,20 @@ int main()
 	}
 
 	double classifadj = 0.00;
+	
 	switch (classif)
 	{
-	case '1':
+	case 1:
 		{
 		classifadj = (.05 * basesalary);
 		break;
 		}
-	case '2':
+	case 2:
 		{
 		classifadj = (.10 * basesalary);
 		break;
 		}
-	case '3':
+	case 3:
 		{
 		classifadj = (.20 * basesalary);
 		break;
@@ -81,21 +83,17 @@ int main()
 	double eduadj = 0.0;
 	switch (edu)
 	{
-	case '1':
-		{
-		break;
-		}
-	case '2':
+	case 2:
 		{
 		eduadj = (.05 * basesalary);
 		break;
 		}
-	case '3':
+	case 3:
 		{
 		eduadj = (.12 * basesalary);
 		break;
 		}
-	case '4':
+	case 4:
 		{
 		eduadj = (.20 * basesalary);
 		break;
@@ -118,10 +116,10 @@ int main()
 
 	double totalsalary = basesalary + classifadj + eduadj + seniorityadj;
 	
-	cout << "Base Salary: " << basesalary << '\n';
+	cout << setprecision(6) << "Base Salary: " << basesalary << '\n';
 	cout << "Classification Adjustment: +" << classifadj << '\n';
 	cout << "Educational Adjustment: +" << eduadj << '\n';
-	cout << "Seniority Adjustment: +" << seniorityadj << '\n';
+	cout << "Seniority Adjustment: +" << seniorityadj << '\n' << setprecision(2);
 
 
 	cout << setw(20) << "Name" << setw(15) << "ID#"
