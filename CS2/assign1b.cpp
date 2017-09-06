@@ -10,10 +10,10 @@
 
 using namespace std;
 
-// constants below
+// GLOBAL CONSTANTS
 const int MAX = 30;
 
-// structs below - no memory allocation
+// STRUCTS - no memory allocation
 struct Employee {
     string name;
     char empcode;
@@ -40,6 +40,7 @@ struct Employee {
 // open file path and read file contacts to array of struct Employee
 void inputFileToStruct(Employee data [], const string & InputFilename);
 
+//MAIN
 int main()
 {
 	// declare array of struct Employee with a size = const MAX
