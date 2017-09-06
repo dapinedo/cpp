@@ -55,10 +55,11 @@ int main()
 	
 	// open file path and read file contacts to array of struct Employee
 	inputFileToStruct(dataset, InputFilename);
-
+    structToOutput();
 
     /* TODO
-    - below conditional statements will go into modules/functions
+    - below conditional statements will go into function structToOutput();
+    - add const member functions as needed to struct to access struct members
     */
     
 	string codename = "";
