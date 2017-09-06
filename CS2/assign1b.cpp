@@ -39,6 +39,7 @@ struct Employee {
 
 // open file path and read file contacts to array of struct Employee
 void inputFileToStruct(Employee data [], const string & InputFilename);
+void structToOutput();
 
 //MAIN
 int main()
