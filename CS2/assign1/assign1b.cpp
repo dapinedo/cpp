@@ -28,6 +28,7 @@ struct Employee {
     
     // Constructors
     
+    // Default and explicit constructor
     Employee(const string & last = "Not Set", const string & first = "Not Set", 
     	char employeecode = 'X', int identification = 0, short classification = 0, 
     	int yrs = 51, short educationalcode = 0) 
@@ -44,6 +45,7 @@ struct Employee {
 		badline = false;
 	} 
 	
+	// Explicit constructor
 	Employee (int identification) {
 		ID = identification;
 	}
