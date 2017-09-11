@@ -303,11 +303,11 @@ int inputFileToStruct(Employee data [], const string & InputFilename)
 				// grossSalary part - seniorityadj
 				double seniorityadj = 0.0;
 				if (!badline) {
-					if (yrs >= 0 && yrs <= 10) {
+					if ((yrs >= 0) && (yrs <= 10)) {
 						seniorityadj = (.05 * basesalary);
 					}
-					else if (yrs > 10 && yrs < 50) {
-						seniorityadj = (.01 * (yrs - 10) * basesalary);
+					else if ((yrs > 10) && (yrs <= 50)) {
+						seniorityadj = (.05 * basesalary) + (.01 * (yrs - 10) * basesalary);
 					}
 					else {
 						seniorityadj = 0.0;
