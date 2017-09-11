@@ -26,6 +26,8 @@ struct Employee {
     double grossSalary;
     bool badline;
     
+    // Constructors
+    
     Employee(const string & last = "Not Set", const string & first = "Not Set", 
     	char employeecode = 'X', int identification = 0, short classification = 0, 
     	int yrs = 51, short educationalcode = 0) 
@@ -41,10 +43,6 @@ struct Employee {
 		empcodeName = "";
 		badline = false;
 	} 
-	
-	Employee (string & last) {
-		lastname = last;
-	}
 	
 	Employee (int identification) {
 		ID = identification;
@@ -88,6 +86,10 @@ struct Employee {
 	}
 	void setBadline(bool flag) {
 		badline = flag;
+	}
+	
+	void setLastname(const string & str) {
+		lastname = str;
 	}
 	
 	//Print functions
@@ -427,8 +429,10 @@ void structToOutput(Employee data [], const string & OutputFilename, int recordc
 			case 2 : {
 				cout << "Enter your search term for Last name [case sensitive]: ";
 				string term;
+				cin.sync();
 				cin >> term;
-				Employee searchterm = Employee(term);
+				Employee searchterm;
+				searchterm.setLastname(term);
 				found = linearSearch (data, searchterm, recordcount, 2);
 				if (found < 0) {
 					cout << "Sorry, search term not found" << '\n';
@@ -494,12 +498,12 @@ Flag = 2 means sort and search based on last name
 int linearSearch (Employee data[], Employee searchterm, int recordcount, short flag) {
 	bubbleSort (data, recordcount, flag);
 	for (int i = 0; i < recordcount; i++) {
-		if (flag = 1) {
+		if (flag == 1) {
 			if (data[i].getID() == searchterm.getID()) {
 				return i;
 			}
 		}
-		else if (flag = 2) {
+		else if (flag == 2) {
 			if (data[i].getLastname() == searchterm.getLastname()) {
 				return i;
 			}
