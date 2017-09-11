@@ -2,7 +2,7 @@
 // Assignment 1b
 // due: September 11, 2017
 //
-
+// Grade: 23/23 - notes - make search output easier to read
 #include <iostream>
 #include <fstream>
 #include <iomanip>
