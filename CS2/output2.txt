@@ -1,0 +1,47 @@
+-----UNSORTED-----
+                Name            ID#                 Job Type   Gross Salary
+      Jeff           Smith           1234               Management        1905.00
+      Jack            Khan          23414           Factory Worker         960.00
+       Joe             Lee           3452            Office Worker        1320.00
+      Lary            Mann           5432               Management        2040.00
+       Ben          George           6543           Factory Worker        1104.00
+    George      Washington           5643         BAD INPUT - UNABLE TO CALCULATE
+      Jack           Adams           6743            Office Worker        1440.00
+      Sara           Jones           5439           Factory Worker        1192.00
+     Sandy         Beckman           5555               Management        2430.00
+
+-----SORTED BY ID-----
+                Name            ID#                 Job Type   Gross Salary
+      Jeff           Smith           1234               Management        1905.00
+       Joe             Lee           3452            Office Worker        1320.00
+      Lary            Mann           5432               Management        2040.00
+      Sara           Jones           5439           Factory Worker        1192.00
+     Sandy         Beckman           5555               Management        2430.00
+    George      Washington           5643         BAD INPUT - UNABLE TO CALCULATE
+       Ben          George           6543           Factory Worker        1104.00
+      Jack           Adams           6743            Office Worker        1440.00
+      Jack            Khan          23414           Factory Worker         960.00
+
+-----SORTED BY LAST NAME-----
+                Name            ID#                 Job Type   Gross Salary
+      Jack           Adams           6743            Office Worker        1440.00
+     Sandy         Beckman           5555               Management        2430.00
+       Ben          George           6543           Factory Worker        1104.00
+      Sara           Jones           5439           Factory Worker        1192.00
+      Jack            Khan          23414           Factory Worker         960.00
+       Joe             Lee           3452            Office Worker        1320.00
+      Lary            Mann           5432               Management        2040.00
+      Jeff           Smith           1234               Management        1905.00
+    George      Washington           5643         BAD INPUT - UNABLE TO CALCULATE
+
+-----SORTED BY GROSS SALARY-----
+                Name            ID#                 Job Type   Gross Salary
+    George      Washington           5643         BAD INPUT - UNABLE TO CALCULATE
+      Jack            Khan          23414           Factory Worker         960.00
+       Ben          George           6543           Factory Worker        1104.00
+      Sara           Jones           5439           Factory Worker        1192.00
+       Joe             Lee           3452            Office Worker        1320.00
+      Jack           Adams           6743            Office Worker        1440.00
+      Jeff           Smith           1234               Management        1905.00
+      Lary            Mann           5432               Management        2040.00
+     Sandy         Beckman           5555               Management        2430.00

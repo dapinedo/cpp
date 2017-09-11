@@ -1,0 +1,131 @@
+-----UNSORTED-----
+                Name            ID#                 Job Type   Gross Salary
+      Jeff           Smith           1234               Management        1905.00
+      Jack            Khan          23414           Factory Worker         960.00
+       Joe             Lee           3452            Office Worker        1320.00
+      Lary            Mann           5432               Management        2040.00
+       Ben          George           6543           Factory Worker        1104.00
+    George      Washington           5643         BAD INPUT - UNABLE TO CALCULATE
+      Jack           Adams           6743            Office Worker        1440.00
+      Sara           Jones           5439           Factory Worker        1192.00
+     Sandy         Beckman           5555               Management        2430.00
+      Mike          Hammer           5434         BAD INPUT - UNABLE TO CALCULATE
+      Jeff          Summer           1294               Management        2160.00
+      Jack        Ali-Khan           2341           Factory Worker         960.00
+       Joe          Lynche           3492            Office Worker        1420.00
+      Lory       Mannville           5402               Management        2385.00
+      Barb     Georgeville           6943           Factory Worker        1264.00
+    George       Hamington           5673           Factory Worker        1208.00
+      John            Adam           6703            Office Worker        1640.00
+      Sara         Jackson           5400           Factory Worker        1080.00
+    Sandra           Barbs           5995               Management        1950.00
+     Micky          Jordan           5104         BAD INPUT - UNABLE TO CALCULATE
+   Jeffery           Stone           9234               Management        2055.00
+     Jacky          Karman           9341           Factory Worker        1016.00
+       Joe          Larson           9452            Office Worker        1450.00
+      Lary         Madison           9432            Office Worker        1450.00
+  Benjamin        Franklin           9543           Factory Worker        1264.00
+    George       Albertson           9643         BAD INPUT - UNABLE TO CALCULATE
+      Jack          Orteda           9743            Office Worker        1420.00
+      Carl           Melon           9439           Factory Worker        1016.00
+     Sandy         Bachman           9555               Management        2310.00
+      Mike         Harison           9434         BAD INPUT - UNABLE TO CALCULATE
+
+-----SORTED BY ID-----
+                Name            ID#                 Job Type   Gross Salary
+      Jeff           Smith           1234               Management        1905.00
+      Jeff          Summer           1294               Management        2160.00
+      Jack        Ali-Khan           2341           Factory Worker         960.00
+       Joe             Lee           3452            Office Worker        1320.00
+       Joe          Lynche           3492            Office Worker        1420.00
+     Micky          Jordan           5104         BAD INPUT - UNABLE TO CALCULATE
+      Sara         Jackson           5400           Factory Worker        1080.00
+      Lory       Mannville           5402               Management        2385.00
+      Lary            Mann           5432               Management        2040.00
+      Mike          Hammer           5434         BAD INPUT - UNABLE TO CALCULATE
+      Sara           Jones           5439           Factory Worker        1192.00
+     Sandy         Beckman           5555               Management        2430.00
+    George      Washington           5643         BAD INPUT - UNABLE TO CALCULATE
+    George       Hamington           5673           Factory Worker        1208.00
+    Sandra           Barbs           5995               Management        1950.00
+       Ben          George           6543           Factory Worker        1104.00
+      John            Adam           6703            Office Worker        1640.00
+      Jack           Adams           6743            Office Worker        1440.00
+      Barb     Georgeville           6943           Factory Worker        1264.00
+   Jeffery           Stone           9234               Management        2055.00
+     Jacky          Karman           9341           Factory Worker        1016.00
+      Lary         Madison           9432            Office Worker        1450.00
+      Mike         Harison           9434         BAD INPUT - UNABLE TO CALCULATE
+      Carl           Melon           9439           Factory Worker        1016.00
+       Joe          Larson           9452            Office Worker        1450.00
+  Benjamin        Franklin           9543           Factory Worker        1264.00
+     Sandy         Bachman           9555               Management        2310.00
+    George       Albertson           9643         BAD INPUT - UNABLE TO CALCULATE
+      Jack          Orteda           9743            Office Worker        1420.00
+      Jack            Khan          23414           Factory Worker         960.00
+
+-----SORTED BY LAST NAME-----
+                Name            ID#                 Job Type   Gross Salary
+      John            Adam           6703            Office Worker        1640.00
+      Jack           Adams           6743            Office Worker        1440.00
+    George       Albertson           9643         BAD INPUT - UNABLE TO CALCULATE
+      Jack        Ali-Khan           2341           Factory Worker         960.00
+     Sandy         Bachman           9555               Management        2310.00
+    Sandra           Barbs           5995               Management        1950.00
+     Sandy         Beckman           5555               Management        2430.00
+  Benjamin        Franklin           9543           Factory Worker        1264.00
+       Ben          George           6543           Factory Worker        1104.00
+      Barb     Georgeville           6943           Factory Worker        1264.00
+    George       Hamington           5673           Factory Worker        1208.00
+      Mike          Hammer           5434         BAD INPUT - UNABLE TO CALCULATE
+      Mike         Harison           9434         BAD INPUT - UNABLE TO CALCULATE
+      Sara         Jackson           5400           Factory Worker        1080.00
+      Sara           Jones           5439           Factory Worker        1192.00
+     Micky          Jordan           5104         BAD INPUT - UNABLE TO CALCULATE
+     Jacky          Karman           9341           Factory Worker        1016.00
+      Jack            Khan          23414           Factory Worker         960.00
+       Joe          Larson           9452            Office Worker        1450.00
+       Joe             Lee           3452            Office Worker        1320.00
+       Joe          Lynche           3492            Office Worker        1420.00
+      Lary         Madison           9432            Office Worker        1450.00
+      Lary            Mann           5432               Management        2040.00
+      Lory       Mannville           5402               Management        2385.00
+      Carl           Melon           9439           Factory Worker        1016.00
+      Jack          Orteda           9743            Office Worker        1420.00
+      Jeff           Smith           1234               Management        1905.00
+   Jeffery           Stone           9234               Management        2055.00
+      Jeff          Summer           1294               Management        2160.00
+    George      Washington           5643         BAD INPUT - UNABLE TO CALCULATE
+
+-----SORTED BY GROSS SALARY-----
+                Name            ID#                 Job Type   Gross Salary
+    George       Albertson           9643         BAD INPUT - UNABLE TO CALCULATE
+      Mike          Hammer           5434         BAD INPUT - UNABLE TO CALCULATE
+      Mike         Harison           9434         BAD INPUT - UNABLE TO CALCULATE
+     Micky          Jordan           5104         BAD INPUT - UNABLE TO CALCULATE
+    George      Washington           5643         BAD INPUT - UNABLE TO CALCULATE
+      Jack        Ali-Khan           2341           Factory Worker         960.00
+      Jack            Khan          23414           Factory Worker         960.00
+     Jacky          Karman           9341           Factory Worker        1016.00
+      Carl           Melon           9439           Factory Worker        1016.00
+      Sara         Jackson           5400           Factory Worker        1080.00
+       Ben          George           6543           Factory Worker        1104.00
+      Sara           Jones           5439           Factory Worker        1192.00
+    George       Hamington           5673           Factory Worker        1208.00
+  Benjamin        Franklin           9543           Factory Worker        1264.00
+      Barb     Georgeville           6943           Factory Worker        1264.00
+       Joe             Lee           3452            Office Worker        1320.00
+       Joe          Lynche           3492            Office Worker        1420.00
+      Jack          Orteda           9743            Office Worker        1420.00
+      Jack           Adams           6743            Office Worker        1440.00
+       Joe          Larson           9452            Office Worker        1450.00
+      Lary         Madison           9432            Office Worker        1450.00
+      John            Adam           6703            Office Worker        1640.00
+      Jeff           Smith           1234               Management        1905.00
+    Sandra           Barbs           5995               Management        1950.00
+      Lary            Mann           5432               Management        2040.00
+   Jeffery           Stone           9234               Management        2055.00
+      Jeff          Summer           1294               Management        2160.00
+     Sandy         Bachman           9555               Management        2310.00
+      Lory       Mannville           5402               Management        2385.00
+     Sandy         Beckman           5555               Management        2430.00
