@@ -55,9 +55,15 @@ public:
 	2. getInstance(BankAccount & BA, ifstream & in) take input from input file
 	*/
 	
-	//1. static prototype instantiates class as object
+	/* 1. static prototype instantiates class as object
+	 * Can't call any other class functions that are not static.
+	 * Can't access non static class data members.
+	 */
 	static void getInstance(BankAccount & BA);
-	//2. static prototype instantiates class as object
+	/* 2. static prototype instantiates class as object
+	 * Can't call any other class functions that are not static.
+	 * Can't access non static class data members.
+	 */
 	static void getInstance(BankAccount & BA, ifstream & in);
 
 };

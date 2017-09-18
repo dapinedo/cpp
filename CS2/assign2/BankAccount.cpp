@@ -131,7 +131,11 @@ getInstance takes object and fills the otherwise blank class object instance;
 2. getInstance(BankAccount & BA, ifstream & in) takes input from input file
 */
 	
-//1. static prototype instantiates class as object
+/* 1. static prototype instantiates class as object
+ * Can't call any other class functions that are not static.
+ * Can't access non static class data members.
+*/
+
 void BankAccount::getInstance(BankAccount & BA) //static
 {
 	string actnum, lname, fname;
@@ -149,7 +153,10 @@ void BankAccount::getInstance(BankAccount & BA) //static
 	cout << "Account created successfully" << '\n';
 	cout << "-------------------------------" << '\n';
 }
-//2. static prototype instantiates class as object
+/* 2. static prototype instantiates class as object
+ * Can't call any other class functions that are not static.
+ * Can't access non static class data members.
+*/
 void BankAccount::getInstance(BankAccount & BA, ifstream & in)
 {
 	string actnum, lname, fname;
