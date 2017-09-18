@@ -1,8 +1,30 @@
 #include "Student.h"
 #include "dummy.h"
+#include "StudentList.h"
 void print(Student S);
 Student getStudent();
+
 int main()
+{
+	StudentList SL;
+	Student S1(1997, "Lisa", "Jones", 9876, 3.8);
+	Student S2(1996, "Kim", "Adams", 1234, 3.2);
+	Student S3(1996, "Jim", "Jones", 1234, 3.2);
+	SL.add(S1);
+	SL.add(S2);
+	SL.add(S3);
+
+	Student S4(1996, "Jim", "Jones", 9999, 3.5);
+	SL.add(S4);
+	cout << SL.toString() << endl;
+	SL.bubbleSort(1);
+	cout << "After sorting based on ID" << endl;
+
+	cout << SL.toString() << endl;
+	system("pause");
+	return 0;
+}
+int main1()
 {
 	/*string collgeNm = Student::getCollgeName();
 	cout << "College Name: " << collgeNm << endl;*/

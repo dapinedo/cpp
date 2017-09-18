@@ -127,6 +127,15 @@ Student Student::getInstance(istream & in)
 	}
 }
 
+const string Student::toString() const
+{
+	ostringstream os;
+	os << fixed << showpoint << setprecision(2)
+		<< "Name: " << FirstName << ' ' << LastName << endl
+		<< "ID: " << ID << endl
+		<< "GPA: " << GPA << endl;
+	return os.str();
+}
 Student::Student(const Student & S) : FirstName(S.FirstName),
 LastName(S.LastName), ID(S.ID), GPA(S.GPA), BirthYear(S.BirthYear)
 {

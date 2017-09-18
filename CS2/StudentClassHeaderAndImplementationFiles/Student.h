@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream> // IO to files
 #include <iomanip>
+#include <sstream>
 using namespace std;
 
 class Student
@@ -59,6 +60,8 @@ public:
 
 	Student(const Student & S);
 	const Student & operator = (const Student & S);
+
+	const string toString() const;
 };
 
 #endif
