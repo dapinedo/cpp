@@ -1,7 +1,5 @@
 #include "StudentList.h"
 
-
-
 StudentList::StudentList():len(0), list_state(0)
 {
 }

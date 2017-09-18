@@ -1,3 +1,10 @@
+/* Daniel Pinedo
+ * CS 2 - Section 0140
+ * assignment: 2, part 1
+ * due: Sept. 18, 2017
+ * file: BankAccount.h
+ */
+
 #include "BankAccount.h"
 
 //Default constructor

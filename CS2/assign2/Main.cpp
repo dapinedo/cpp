@@ -1,3 +1,10 @@
+/* Daniel Pinedo
+ * CS 2 - Section 0140
+ * assignment: 2, part 1
+ * due: Sept. 18, 2017
+ * file: Main.cpp
+ */
+
 #include "BankAccount.h"
 
 void test_main();
