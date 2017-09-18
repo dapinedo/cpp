@@ -54,7 +54,10 @@ public:
 	1. getInstance(BankAccount & BA) takes input from cin
 	2. getInstance(BankAccount & BA, ifstream & in) take input from input file
 	*/
+	
+	//1. static prototype instantiates class as object
 	static void getInstance(BankAccount & BA);
+	//2. static prototype instantiates class as object
 	static void getInstance(BankAccount & BA, ifstream & in);
 
 };
