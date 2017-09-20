@@ -7,6 +7,69 @@ Student getStudent();
 int main()
 {
 	StudentList SL;
+	SL = StudentList::getInstance(cin);
+	cout << SL.toString();
+	system("pause");
+	return 0;
+}
+int main4()
+{
+	StudentList SL;
+	Student S1(1997, "Lisa", "Jones", 9876, 3.8);
+	Student S2(1996, "Kim", "Adams", 1234, 3.2);
+	
+	SL.add(S1);
+	SL.add(S2);
+	
+
+	Student S4(1996, "Jim", "Jones", 9999, 3.5);
+	SL.add(S4);
+	cout << SL.toString() << endl;
+	cout << "Enter the ID of student to be updated: ";
+	int id;
+	cin >> id;
+	Student key(0, "", "", id, 0.0);
+	bool updated = SL.updateStudent(key);
+
+	cout << SL.toString() << endl;
+	system("pause");
+	return 0;
+}
+int main3()
+{
+	StudentList SL;
+	Student S;
+	//SL.deleteStudent(S);
+	//return 9;
+	Student S1(1997, "Lisa", "Jones", 9876, 3.8);
+	Student S2(1996, "Kim", "Adams", 1234, 3.2);
+	Student S3(1996, "Jim", "Jones", 1234, 3.2);
+	SL.add(S1);
+	SL.add(S2);
+	SL.add(S3);
+
+	Student S4(1996, "Jim", "Jones", 9999, 3.5);
+	SL.add(S4);
+	SL.bubbleSort(1);
+	cout << SL.toString() << endl;
+
+	if (SL.deleteStudent(S4))
+	{
+		cout << "Student deleted " << endl;
+	}
+	else
+	{
+		cout << "Student not deleted " << endl;
+	}
+
+	cout << SL.toString() << endl;
+	bool deleted = SL.deleteStudent(S);
+	system("pause");
+	return 0;
+}
+int main2()
+{
+	StudentList SL;
 	Student S1(1997, "Lisa", "Jones", 9876, 3.8);
 	Student S2(1996, "Kim", "Adams", 1234, 3.2);
 	Student S3(1996, "Jim", "Jones", 1234, 3.2);

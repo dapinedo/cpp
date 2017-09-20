@@ -30,6 +30,14 @@ public:
 	flag = 3 for GPA based sorting
 	*/
 	void bubbleSort(size_t flag);
+	bool deleteStudent(const Student & st);
+	bool updateStudent(const Student & st);
+	static StudentList getInstance(istream & in);
+
+	StudentList(const StudentList & SL);
+	const StudentList & StudentList::operator = (const StudentList & SL);
+
+	void print() const;
 };
 
 #endif
