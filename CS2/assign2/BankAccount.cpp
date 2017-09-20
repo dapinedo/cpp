@@ -2,7 +2,7 @@
  * CS 2 - Section 0140
  * assignment: 2, part 1
  * due: Sept. 18, 2017
- * file: BankAccount.h.cpp
+ * file: BankAccount.cpp
  */
 
 #include "BankAccount.h"
@@ -40,14 +40,9 @@ const string BankAccount::toString() const
 	return os.str();
 }
 // print() functions
-void BankAccount::print(ostream & out) const
+void BankAccount::print(ostream & out = cout) const
 {
-	if (&cout == &out) { // Object is printed to console
-		cout << BankAccount::toString();
-	}
-	else { // Object is printed to file
-		out << BankAccount::toString();
-	}
+	out << BankAccount::toString();
 }
 // Mutators - read/write access
 void BankAccount::setAccountNumber (const string & actN)

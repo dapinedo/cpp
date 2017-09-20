@@ -1,7 +1,12 @@
 /* Daniel Pinedo
  * CS 2 - Section 0140
  * assignment: 2, part 1
- * due: Sept. 18, 2017
+ * Grade, Part 1 prep : OK 
+ * Grade, Part 1      : 9.5/10
+ * Grade, Part 2 prep : 
+ * Grade, Part 2      :
+ * part 1 due: Sept. 18, 2017
+ * part 2 due: Sept. 25, 2017
  * file: Main.cpp
  */
 
@@ -39,7 +44,7 @@ int main()
 		cout << "Enter choice: ";
 		cin >> choice;
 		if (choice == 1) {
-			B.getInstance(B);
+			BankAccount::getInstance(B); // calling static function from a class
 			entrymade = true;
 		}
 		else if (choice == 2) {
