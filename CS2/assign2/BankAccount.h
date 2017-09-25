@@ -10,7 +10,7 @@
 #define BANKACCOUNT_H
 #include <iostream>
 #include <string>
-#include <fstream> // IO to files
+#include <fstream>
 #include <iomanip>
 #include <sstream> 
 using namespace std;
