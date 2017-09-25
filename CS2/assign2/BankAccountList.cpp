@@ -13,7 +13,7 @@
  #include "BankAccountList.h"
  
  // DEFAULT CONSTRUCTOR
-BankAccountList::BankAccountList : 
+BankAccountList::BankAccountList() : 
     num_of_elements(0),
     list_state(0) 
 {
@@ -243,6 +243,7 @@ void getInstance(BankAccountList & BAL, ifstream & in)
             << "List is full at " << BAL.num_of_elements << '\n';
 	}
 }
+
 const string getLastName(const string & actNum) const;
 int getLengthOfLongestFirstName() const;
 int getLengthofLongestLastName() const;

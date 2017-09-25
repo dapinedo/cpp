@@ -98,7 +98,7 @@ public:
 	const string getLastName(const string & actNum) const;
 	int getLengthOfLongestFirstName() const;
 	int getLengthofLongestLastName() const;
-	int getListState const;
+	int getListState() const;
 	double getMeanOfAllDeposits() const;
 	int getNumberOfElements() const;
 	void getSmallestBalanceAccount(BankAccount & BA) const;
