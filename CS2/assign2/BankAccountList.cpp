@@ -231,10 +231,10 @@ void BankAccountList::getInstance(BankAccountList & BAL) {
 	}
 }
 // returns by reference a new instance of BankAccountList from input file
-void getInstance(BankAccountList & BAL, ifstream & in)
+void BankAccountList::getInstance(BankAccountList & BAL, ifstream & in)
 {
     bool done = false;
-    while (!done && !BAL.isFull()) {
+    while (!done && !BAL.isFull() && (in.peek() != EOF)) {
         BankAccount temp;
         BankAccount::getInstance(temp, in);
         BAL.addAccount(temp);
