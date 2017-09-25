@@ -98,7 +98,7 @@ int main()
 			cout << "Enter path to output file: ";
 			cin.ignore(255, '\n');
 			getline(cin, OutputFilename);
-			ofstream out(OutputFilename);
+			ofstream out(OutputFilename, ios::app);
 			if (out.is_open()) {
 				cout << "-------------------------------" << '\n';
 				cout << "File created successfully" << '\n';

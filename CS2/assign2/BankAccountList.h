@@ -37,15 +37,15 @@ public:
 	// Adds account BA to Bank Account List. Informs user if list is full. 
 	// Must have unique account number.
 	// Sets list_state to 0.
-	void addAccount(const BankAccount &BA);
+	void addAccount(const BankAccount & BA);
 	
 	// Runs findAccount ACCESSOR. If found returns true and deletes account.
 	// Otherwise returns false. Does not change list_state.
-	bool deleteAccount(const string &actNum);
+	bool deleteAccount(const string & actNum);
 	
 	// Runs findAccount ACCESSOR. If found returns true and deposits into account.
 	// Otherwise returns false. Resets list_state to 0 if list_state = 1
-	bool depositMoney(const string &actNum, double money);
+	bool depositMoney(const string & actNum, double money);
 	
 	// sets number of elements in list to zero and sets list state to 0
 	void makeEmpty();
@@ -78,14 +78,22 @@ public:
 	void setLastName(const string & lname, const string & actNum);
 	
 	// NON-MUTATORS
+	
+	// if found then returns index i where found and returns true
+    // if not found then returns -1 as value of i and returns false
 	bool findAccount(const string & actNum, int & i) const;
+	
 	bool getAccountAt(BankAccount & BA, size_t & index) const;
 	double getBalance(const string & actNum) const;
 	static int getCapacity();
 	const string getFirstName(const string & actNum) const;
 	const string getFullName(const string & actNum) const;
 	void getHighestBalanceAccount (BankAccount & BA) const;
-	static void getInstance(BankAccountlist & BAL);
+	
+	// returns by reference a new instance of BankAccountList from console
+	static void getInstance(BankAccountList & BAL);
+	
+	// returns by reference a new instance of BankAccountList from input file
 	static void getInstance(BankAccountList & BAL, ifstream & in);
 	const string getLastName(const string & actNum) const;
 	int getLengthOfLongestFirstName() const;
@@ -99,11 +107,16 @@ public:
 	const string listDescription() const;
 	size_t numberOfDepositsAboveMean() const;
 	size_t numberOfDepositsAtOrBelowMean() const;
+	
+	// prints to console[default] or output file
+    // writes to output file in append mode to prevent deleting previous data
 	void print(ostream & out) const;
 	void printListAsReport();
 	void  printStatistics(ostream & out) const;
 	double Standard_Deviation_Deposits() const;
 	double sumAllDeposits() const;
+	
+	// returns string version of entire bank account list
 	const string toString() const;
 	void writeToNewInputFile(ostream & out) const;
 };
