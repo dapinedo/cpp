@@ -38,7 +38,6 @@ void BankAccountList::addAccount(const BankAccount &BA)
 		List[num_of_elements] = BA;
 		num_of_elements++;
 		list_state = 0;// Because we may be adding to a sorted list
-		return true;
 	}
 	else {
 		cout << "Account number: " << BA.getAccountNumber() << " already exists." << endl;
@@ -50,7 +49,7 @@ void BankAccountList::addAccount(const BankAccount &BA)
 bool BankAccountList::deleteAccount(const string & actNum)
 {
     bool deleted = false;
-	if (num_of_elements != 0) {
+	if (!isEmpty()) {
 		// find out if actNum is in the array
 		int index = 0;
 		bool found = findAccount(actNum, index);
@@ -93,7 +92,7 @@ bool BankAccountList::updateAccount() {
     cout << "Enter account number to update: ";
     string actNum;
     cin >> actNum;
-	if (num_of_elements != 0) {
+	if (!isEmpty()) {
 		// find out if Account number is in the array
 		int index = 0;
 		bool found = findAccount(actNum, index);
@@ -146,7 +145,7 @@ void BankAccountList::sort(int flag)
    
    // sort otherwise
    for (size_t i = 0; i < num_of_elements; i++) {
-	   for (size_t j = 0; j < len-1-i; j++) {
+	   for (size_t j = 0; j < num_of_elements-1-i; j++) {
             if (flag == 1) { // sort on Account Number
 			   if (List[j].getAccountNumber() > List[j+1].getAccountNumber()) {
 				   BankAccount buffer = List[j];
@@ -183,11 +182,11 @@ void BankAccountList::sort(int flag)
 	
 // checks if index is within bound of index of list,
 // then replaces account at location index with BA
-void setAccountAt(BankAccount & BA, size_t index);
+// TO BE COMPLETED void setAccountAt(BankAccount & BA, size_t index);
 	
 // checks if actNum is in the list. If true, sets lname to last name 
 // if list_state is 2 then sets to 0
-void setLastName(const string & lname, const string & actNum);
+// TO BE COMPLETED void setLastName(const string & lname, const string & actNum);
 	
 // NON-MUTATORS
 
@@ -197,7 +196,7 @@ bool BankAccountList::findAccount(const string & actNum, int & i) const
 {
 	bool found = false;
 
-	for (i; i < num_of_elements; i++)
+	for (i = 0; i < num_of_elements; i++)
 	{
 		if (actNum == List[i].getAccountNumber())
 		{
@@ -209,24 +208,25 @@ bool BankAccountList::findAccount(const string & actNum, int & i) const
 	return false;
 }
 
-bool getAccountAt(BankAccount & BA, size_t & index) const;
-double getBalance(const string & actNum) const;
-static int getCapacity();
-const string getFirstName(const string & actNum) const;
-const string getFullName(const string & actNum) const;
-void getHighestBalanceAccount (BankAccount & BA) const;
+// TO BE COMPLETED bool getAccountAt(BankAccount & BA, size_t & index) const;
+// TO BE COMPLETED double getBalance(const string & actNum) const;
+// TO BE COMPLETED static int getCapacity();
+// TO BE COMPLETED const string getFirstName(const string & actNum) const;
+// TO BE COMPLETED const string getFullName(const string & actNum) const;
+// TO BE COMPLETED void getHighestBalanceAccount (BankAccount & BA) const;
 
 // returns by reference a new instance of BankAccountList
 void BankAccountList::getInstance(BankAccountList & BAL) {
     bool done = false;
-    while (!done && BAL.num_of_elements < BankAccountList::MAX) {
-		BankAccount temp = BankAccount::getInstance(temp);
+    while (!done && !BAL.isFull()) {
+		BankAccount temp; 
+		BankAccount::getInstance(temp);
 		BAL.addAccount(temp);
 		cout << "More data? Enter 0 to continue or 1 to stop: ";
 		cin >> done;
 		cout << "Current List Length = " << BAL.num_of_elements << endl;
 	}
-	if (BAL.num_of_elements >= BankAccountList::MAX) {
+	if (BAL.isFull()) {
         cout << "Cannot add anymore to list. List is full" << '\n';
 	}
 }
@@ -234,58 +234,84 @@ void BankAccountList::getInstance(BankAccountList & BAL) {
 void getInstance(BankAccountList & BAL, ifstream & in)
 {
     bool done = false;
-    while (!done && BAL.num_of_elements < BankAccountList::MAX) {
-        BankAccount temp = BankAccount::getInstance(temp, in);
+    while (!done && !BAL.isFull()) {
+        BankAccount temp;
+        BankAccount::getInstance(temp, in);
         BAL.addAccount(temp);
-        cout << "Current List Length = " << BAL.num_of_elements << endl;
-	if (BAL.num_of_elements >= BankAccountList::MAX) {
+        cout << "Current List Length = " << BAL.getNumberOfElements() << endl;
+    }
+	if (BAL.isFull()) {
         cout << "Input file has more records than list can handle. "
-            << "List is full at " << BAL.num_of_elements << '\n';
+            << "List is full at " << BAL.getNumberOfElements() << '\n';
 	}
 }
 
-const string getLastName(const string & actNum) const;
-int getLengthOfLongestFirstName() const;
-int getLengthofLongestLastName() const;
-int getListState const;
-double getMeanOfAllDeposits() const;
-int getNumberOfElements() const;
-void getSmallestBalanceAccount(BankAccount & BA) const;
-bool isEmpty() const;
-bool isFull() const;
-const string listDescription() const;
-size_t numberOfDepositsAboveMean() const;
-size_t numberOfDepositsAtOrBelowMean() const;
+// TO BE COMPLETED const string getLastName(const string & actNum) const;
+// TO BE COMPLETED int getLengthOfLongestFirstName() const;
+// TO BE COMPLETED int getLengthofLongestLastName() const;
+// TO BE COMPLETED int getListState const;
+// TO BE COMPLETED double getMeanOfAllDeposits() const;
+
+// returns num_of_elements
+int BankAccountList::getNumberOfElements() const {
+    return static_cast<int>(num_of_elements);
+}
+
+// TO BE COMPLETED void getSmallestBalanceAccount(BankAccount & BA) const;
+
+// returns true if list is empty else false
+bool BankAccountList::isEmpty() const {
+   if (num_of_elements == 0) {
+       return true;
+   }
+   else {
+       return false;
+   }
+}
+
+// returns true if list is full else false
+bool BankAccountList::isFull() const {
+    if (num_of_elements == BankAccountList::MAX) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+// TO BE COMPLETED const string listDescription() const;
+// TO BE COMPLETED size_t numberOfDepositsAboveMean() const;
+// TO BE COMPLETED size_t numberOfDepositsAtOrBelowMean() const;
 
 // prints to console[default] or output file
 // writes to output file in append mode in driver function to prevent deleting previous data
 void BankAccountList::print(ostream & out = cout) const
 {
-    if (num_of_elements != 0) {
-        for (size_t = 0; i < num_of_elements; i++) {
-            BankAccount::print(out);
+    if (!isEmpty()) {
+        for (size_t i = 0; i < num_of_elements; i++) {
+            List[i].BankAccount::print(out);
+            out << "-------------------" << '\n';
         }
     }
 }
-void printListAsReport();
-void  printStatistics(ostream & out) const;
-double Standard_Deviation_Deposits() const;
-double sumAllDeposits() const;
+
+// TO BE COMPLETED void printListAsReport();
+// TO BE COMPLETED void  printStatistics(ostream & out) const;
+// TO BE COMPLETED double Standard_Deviation_Deposits() const;
+// TO BE COMPLETED double sumAllDeposits() const;
 
 // returns string version of entire bank account list
 const string BankAccountList::toString() const
 {
-    if (num_of_elements == 0)
+    if (isEmpty())
 	{
 		return "List is Empty\n";
 	}
-
 	string temp;
-
-	for (size_t i = 0; i < len; i++)
+	for (size_t i = 0; i < num_of_elements; i++)
 	{
 		temp += List[i].toString();
 	}
 	return temp;
 }
-void writeToNewInputFile(ostream & out) const;
+
+// TO BE COMPLETED void writeToNewInputFile(ostream & out) const;

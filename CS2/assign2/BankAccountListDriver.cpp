@@ -15,41 +15,44 @@
 
 void test_main();
 
-int main() 
-{
+int main() {
 	BankAccountList BAL;
-	// call static getINstance function
-	// BAL = BankAccountList::getInstance(cin);
+	BankAccount B; // dummy code just for testing
+	// REMINDER: call static getInstance function
+	// BankAccountList::getInstance(BAL);
+	// BankAccountList::getInstance(BAL, in)
 	
 	/* uncomment below to run tests on class functions
 	test_main(); */
 	cout << fixed << showpoint << setprecision(2);
-	cout << "Welcome to our bank." << '\n';
-	cout << "Please create an account first to commence." << '\n';
+	cout << "Welcome to our bank account management module." << '\n';
+	cout << "Please create account(s) first in order to see full menu." << '\n';
 	cout << "-------------------------------------------" << '\n';
 	bool entrymade = false;
 	bool done = false;
-	BankAccount B;
 	while (!done) {
 		cout << "Choose a menu number from below" << '\n';
 		cout << "-------------------------------" << '\n';
-		cout << "1. Create an account from keyboard data entry" << '\n';
-		cout << "2. Create an account from input file data entry" << '\n';
+		cout << "1. Create new accounts from keyboard data entry" << '\n';
+		cout << "2. Create new accounts from input file data entry (Max 30 accounts)" << '\n';
 		if (entrymade == true) {
-			cout << "3. Print account balance to console" << '\n';
-			cout << "4. Withdraw money" << '\n';
-			cout << "5. Deposit money" << '\n';
-			cout << "6. Print account details to console" << '\n';
-			cout << "7. Print account details to an output file" << '\n';
-			cout << "8. Print full name of account holder to console only" << '\n';
-			cout << "9. Print account number only of the account holder to console" << '\n';
+			cout << "3. " << '\n';
+			cout << "4. " << '\n';
+			cout << "5. " << '\n';
+			cout << "6. Print current account list to console" << '\n';
+			cout << "7. Withdraw money" << '\n';
+			cout << "8. Deposit money" << '\n';
+			cout << "9. Print account details to console" << '\n';
+			cout << "10. Print account details to an output file" << '\n';
+			cout << "11. Print full name of account holder to console only" << '\n';
+			cout << "12. Print account number only of the account holder to console" << '\n';
 		}
-		cout << "10. Exit" << '\n';
-		short choice = 10;
+		cout << "18. Exit" << '\n';
+		short choice = 18;
 		cout << "Enter choice: ";
 		cin >> choice;
 		if (choice == 1) {
-			BankAccount::getInstance(B); // calling static function from a class
+			BankAccountList::getInstance(BAL); // calling static function from a class
 			entrymade = true;
 		}
 		else if (choice == 2) {
@@ -62,7 +65,7 @@ int main()
 				cout << "-------------------------------" << '\n';
 				cout << "File opened successfully" << '\n';
 				cout << "-------------------------------" << '\n';
-				B.getInstance(B, in);
+				BankAccountList::getInstance(BAL, in);
 				in.close();
 				entrymade = true;
 			}
@@ -72,11 +75,10 @@ int main()
 				cout << "-------------------------------" << '\n';
 			}
 		}
-		else if ((choice == 3) && (entrymade == true)) {
-			cout << fixed << showpoint << setprecision(2);
-			cout << "-------------------------------" << '\n';
-			cout << "account balance: $" << B.getBalance() << '\n';
-			cout << "-------------------------------" << '\n';
+		
+		
+		else if ((choice == 6) && (entrymade == true)) {
+			BAL.print(cout);
 		}
 		else if ((choice == 4) && (entrymade == true)) {
 			double amount;
