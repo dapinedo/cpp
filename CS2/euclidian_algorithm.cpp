@@ -35,3 +35,27 @@ int gcd (int a , int b)
         return gcd (b , a);        // if a < b switch them.
     }
 }
+
+/*
+Example of throw/try/catch
+
+double getMeanofBalances() const
+{
+    if (len == 0)
+        throw "list is empty"
+    else
+        // do code
+}
+
+main ()
+{
+    BankAccountList BAL;
+    double mean;
+    try {
+        mean = BAL.getMeanofBalances();
+        cout << mean << endl;
+    }
+    catch {
+        cout << "list is empty.";
+    }
+}
