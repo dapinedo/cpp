@@ -1,0 +1,5 @@
+Sum of all your tests: 344
+Number of tests taken: 4
+The real average of your tests : 86.00
+Your semester total rounded percentage: 86
+Your grade: B

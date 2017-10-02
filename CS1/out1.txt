@@ -1,0 +1,19 @@
+===============================================================================================================
+Name                Principal Sum($)    Interest($) Total Funds($)  Average Balance($)
+================================================================================================================
+Joseph Kardian              3000.00         923.97        3923.97             1000.00
+Joe Karlton                 3700.00        1139.57        4839.57              925.00
+Mike Hrady                  7680.11        4344.49       12024.60             1920.03
+Albert Wilson               6400.91        6154.83       12555.74             2133.64
+Mohadi Mudaber              3040.00         936.29        3976.29             1013.33
+Joe Kei                     2920.67        1637.06        4557.73              973.56
+Ali Mosaker                15925.73        9008.88       24934.61             5308.58
+Kim Yoo                     8583.48        4864.51       13447.99             2145.87
+Mr Millionaire      You have no deposits so far. 
+Kelly Tai                   3935.11         986.73        4921.84              983.78
+Larry Brownsen             78876.74       56203.83      135080.57            19719.19
+===============================================================================================================
+Total number of customers in the file: 11
+Total interest disbursed to customers: $86200.18
+Total interest disbursed in dollars and cents: 86200 dollars and 18 cents.
+Thank you for using our program.
