@@ -29,6 +29,17 @@ public:
 	friend const Fraction operator - (const Fraction & left, const Fraction & right);
 	friend const Fraction operator * (const Fraction & left, const Fraction & right);
 	friend const Fraction operator / (const Fraction & left, const Fraction & right);
+	friend bool operator == (const Fraction & left, const Fraction & right);
+	friend bool operator != (const Fraction & left, const Fraction & right);
+	friend ostream & operator << (ostream & out, const Fraction & C);
+	friend istream & operator >> (istream & in, Fraction & C);
+	const Fraction operator ++(); // pre increment
+	const Fraction operator ++(int NotUsed); //post increment
+	const Fraction operator --(); // pre increment
+	const Fraction operator --(int NotUsed); //post increment
+	const long getTop() const;
+	const long getBottom() const;
+	const double toDouble() const;
 	~Fraction();
 };
 #endif

@@ -95,6 +95,81 @@ const Fraction operator / (const Fraction & left, const Fraction & right)
 	return Fraction(numerator, denominator);
 }
 
+bool operator == (const Fraction & left, const Fraction & right)
+{
+	return ((left.numerator == right.numerator) && (left.denominator == right.denominator));
+}
+
+bool operator != (const Fraction & left, const Fraction & right)
+{
+	return ((left.numerator != right.numerator) || (left.denominator != right.denominator));
+}
+
+ostream & operator << (ostream & out, const Fraction & F)
+{
+	out << F.toString();
+	return out;
+}
+
+istream & operator >> (istream & in, Fraction & F)
+{
+	if (&in == &cin) {
+		int num, den;
+		cout << "Enter numerator: ";
+		cin >> num;
+		cout << "Enter denominator: ";
+		cin >> den;
+		F = Fraction(num, den);
+	}
+	else {
+		int num, den;
+		in >> num >> den;
+		F = Fraction(num, den);
+	}
+	return in;
+}
+
+const Fraction Fraction::operator ++() // pre increment
+{
+	numerator = numerator + denominator;
+	return Fraction(numerator, denominator);
+}
+const Fraction Fraction::operator ++(int NotUsed) //post increment
+{
+	// Save values before post increment
+	int num = numerator;
+	int den = denominator;
+	numerator = numerator + denominator;
+	return Fraction(num, den);
+}
+
+const Fraction Fraction::operator --() // pre increment
+{
+	numerator = numerator - denominator;
+	return Fraction(numerator, denominator);
+}
+const Fraction Fraction::operator --(int NotUsed) //post increment
+{
+	// Save values before post increment
+	int num = numerator;
+	int den = denominator;
+	numerator = numerator - denominator;
+	return Fraction(num, den);
+}
+
+const long Fraction::getTop() const
+{
+	return numerator;
+}
+const long Fraction::getBottom() const
+{
+	return denominator;
+}
+const double Fraction::toDouble() const
+{
+	return (static_cast<double>(numerator) / denominator);
+}
+
 Fraction::~Fraction()
 {
 }
