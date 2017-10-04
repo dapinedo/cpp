@@ -1,3 +1,12 @@
+/*
+Name: Daniel Pinedo
+Class: CS 2
+Assignment #: 3
+All Compilers Used: VS17
+Operating Systems on Which Compiled: Win10
+Date and Time of Last successful run: 10/4/2017 @0345
+Email: d.p@ieee.org
+*/ 
 #include "FractionList.h"
 
 FractionList::FractionList() : num_elements(0), isSorted(false)
