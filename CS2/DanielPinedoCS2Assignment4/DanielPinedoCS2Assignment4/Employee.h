@@ -21,6 +21,7 @@ public:
 	virtual void setFirstName() const = 0;
 	virtual void toString() const = 0;
 
+	// virtual destructor
 	virtual ~Employee();
 };
 #endif
