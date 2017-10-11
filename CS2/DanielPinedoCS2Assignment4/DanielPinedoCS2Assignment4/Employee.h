@@ -10,16 +10,18 @@ class Employee
 protected:
 	string FirstName;
 	string LastName;
+	static const int MIN_NUM_CHARS_NAMES = 2;
 
 public:
-	Employee(string & fname = "not set", string & lname = "not set");
+	Employee(const string & fname = "not set", const string & lname = "not set");
 	// pure virtual functions
-	virtual void getFirstName() const = 0;
-	virtual void getLastName() const = 0;
-	virtual void getFullName() const = 0;
-	virtual void setLastName() const = 0;
-	virtual void setFirstName() const = 0;
-	virtual void toString() const = 0;
+	virtual const string getFirstName() const = 0;
+	virtual const string getLastName() const = 0;
+	virtual const string getFullName() const = 0;
+	virtual const string toString() const = 0;
+	virtual void setFirstName(const string & fname)  = 0;
+	virtual void setLastName(const string & lname)  = 0;
+	
 
 	// virtual destructor
 	virtual ~Employee();
