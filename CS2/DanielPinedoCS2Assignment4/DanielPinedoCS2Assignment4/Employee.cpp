@@ -2,19 +2,13 @@
 
 Employee::Employee(const string & fname, const string & lname) : FirstName(fname), LastName(lname)
 {
-	/*int fcounter = 0;
-	int lcounter = 0;
-	for (auto & c : FirstName) {
-		fcounter++;
-	}
-	for (auto & c : LastName) {
-		lcounter++;
-	}*/
 	if (FirstName.length() < MIN_NUM_CHARS_NAMES) {
-		FirstName = "not set, value too short";
+		cout << "First name not set. Needs to be at least " << MIN_NUM_CHARS_NAMES << " characters" << endl;
+		FirstName = "First not set";
 	}
 	if (LastName.length() < MIN_NUM_CHARS_NAMES) {
-		LastName = "not set, value too short";
+		cout << "Last name not set. Needs to be at least " << MIN_NUM_CHARS_NAMES << " characters" << endl;
+		LastName = "Last not set";
 	}
 }
 

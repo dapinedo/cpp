@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{0C53064D-6BCD-43B1-B60F-886B9F3A6658}</ProjectGuid>
-    <RootNamespace>DanielPinedoCS2Assignment4</RootNamespace>
+    <ProjectGuid>{FA1CF469-210F-43C8-9F34-E07617CC7BDF}</ProjectGuid>
+    <RootNamespace>VehicleInheritance</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -111,13 +111,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Employee.h" />
-    <ClInclude Include="Manager.h" />
+    <ClInclude Include="Airpalne.h" />
+    <ClInclude Include="Jet.h" />
+    <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Employee.cpp" />
-    <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="Airpalne.cpp" />
+    <ClCompile Include="Jet.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

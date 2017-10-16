@@ -2,6 +2,9 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 #include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <sstream>
 #include <string>
 using namespace std;
 
@@ -13,7 +16,7 @@ protected:
 	static const int MIN_NUM_CHARS_NAMES = 2;
 
 public:
-	Employee(const string & fname = "not set", const string & lname = "not set");
+	Employee(const string & fname = "First not set", const string & lname = "Last not set");
 	// pure virtual functions
 	virtual const string getFirstName() const = 0;
 	virtual const string getLastName() const = 0;
