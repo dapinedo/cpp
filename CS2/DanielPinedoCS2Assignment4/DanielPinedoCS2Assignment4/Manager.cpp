@@ -41,7 +41,7 @@ const string Manager::toString() const
 	oss << fixed << showpoint << setprecision(2);
 	oss << "Boss' Name: " << getFullName() << endl
 		<< "Boss' Title: " << TitleOfBoss << endl
-		<< "Boss' Salary: " << salary << endl;
+		<< "Boss' Salary: $" << salary << endl;
 	return oss.str();
 }
 void Manager::setFirstName(const string & fname)
