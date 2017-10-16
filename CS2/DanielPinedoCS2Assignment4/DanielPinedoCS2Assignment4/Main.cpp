@@ -47,36 +47,39 @@ int main()
 			m = Manager(first, last, salary, title);
 			instanced = true;
 		}
-		if (choice == 2 && instanced) {
+		else if (choice == 2 && instanced) {
 			cout << m.toString();
 		}
-		if (choice == 3 && instanced) {
+		else if (choice == 3 && instanced) {
 			string last;
 			cout << "Enter Manager Last Name: ";
 			cin >> last;
 			m.setLastName(last);
 		}
-		if (choice == 4 && instanced) {
+		else if (choice == 4 && instanced) {
 			double salary;
 			cout << "Enter Manager Salary: ";
 			cin >> salary;
 			m.setSalary(salary);
 		}
-		if (choice == 5 && instanced) {
+		else if (choice == 5 && instanced) {
 			string title;
 			cout << "Enter Manager Boss' title: ";
 			cin >> title;
 			m.setBossTitle(title);
 		}
-		if (choice == 6 && instanced) {
+		else if (choice == 6 && instanced) {
 			cout << "Manager Name: " << m.getFullName() << endl
 				<< "Manager Salary: " << m.getSalary() << endl;
 		}
-		if (choice == 7 && instanced) {
+		else if (choice == 7 && instanced) {
 			cout << "Manager's Boss' title: " << m.getBossTitle() << endl;
 		}
-		if (choice == 8) {
+		else if (choice == 8) {
 			done = true;
+		}
+		else {
+			cout << "Invalid option, try again" << endl;
 		}
 		cout << endl;
 	} while (!done);
