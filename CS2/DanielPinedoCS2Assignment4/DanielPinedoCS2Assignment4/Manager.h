@@ -1,6 +1,16 @@
 #pragma once
 #ifndef MANAGER_H
 #define MANAGER_H
+/*
+Name: Daniel Pinedo
+Class: CS 2
+Assignment #: 4
+All Compilers Used: VS17
+Operating Systems on Which Compiled: Win10
+Date and Time of Last successful run: 10/15/2017 @2056
+Email: d.p@ieee.org
+*/
+
 #include "Employee.h"
 class Manager : public Employee
 {
