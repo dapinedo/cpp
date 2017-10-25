@@ -24,6 +24,12 @@
     <ClCompile Include="TokenizerParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PostFixEval.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ItemType.h">
@@ -39,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TokenizerParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PostFixEval.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

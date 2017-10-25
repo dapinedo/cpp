@@ -22,6 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{80A572C1-5936-4ADA-9E37-ED856A066611}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -98,12 +99,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PostFixEval.cpp" />
     <ClCompile Include="ReversePolishNotation.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="TokenizerParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ItemType.h" />
+    <ClInclude Include="PostFixEval.h" />
     <ClInclude Include="ReversePolishNotation.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="StackInterface.h" />
