@@ -15,35 +15,88 @@ double PostFixEval::evaluate()
 		if ((Str_Arr[index] != "*") || (Str_Arr[index] != "/")
 			|| (Str_Arr[index] != "+") || (Str_Arr[index] != "-")) {
 			numeric = true;
-			return 0.0;
+			value = TokenizerParser::parseDouble(expression);
+			return value;
 		}
 	}
 	// evaluation algorithm
 	Stack newStack;
+	ItemType result;
 	for (size_t index = 0; index < count; index++) {
-		if ((Str_Arr[index] != "*") || (Str_Arr[index] != "/")
-				|| (Str_Arr[index] != "+") || (Str_Arr[index] != "-")) {
-			// BOOKMARK - TO BE COMPLETED pop2 [operator] pop1
+		if (Str_Arr[index] == "*") {
+			ItemType pop1 = newStack.top();
+			newStack.pop();
+			ItemType pop2 = newStack.top();
+			newStack.pop();
+			int newval = pop2.Integer * pop1.Integer;
+			ItemType nval;
+			nval.Integer = newval;
+			newStack.push(nval);
+			cout << pop2.Integer << " * " << pop1.Integer << endl;
+		}
+		else if (Str_Arr[index] == "/") {
+			ItemType pop1 = newStack.top();
+			newStack.pop();
+			ItemType pop2 = newStack.top();
+			newStack.pop();
+			int newval = pop2.Integer / pop1.Integer;
+			ItemType nval;
+			nval.Integer = newval;
+			newStack.push(nval);
+			cout << pop2.Integer << " / " << pop1.Integer << endl;
+		}
+		else if (Str_Arr[index] == "+") {
+			ItemType pop1 = newStack.top();
+			newStack.pop();
+			ItemType pop2 = newStack.top();
+			newStack.pop();
+			int newval = pop2.Integer + pop1.Integer;
+			ItemType nval;
+			nval.Integer = newval;
+			newStack.push(nval);
+			cout << pop2.Integer << " + " << pop1.Integer << endl;
+		}
+		else if (Str_Arr[index] == "-") {
+			ItemType pop1 = newStack.top();
+			newStack.pop();
+			ItemType pop2 = newStack.top();
+			newStack.pop();
+			int newval = pop2.Integer * pop1.Integer;
+			ItemType nval;
+			nval.Integer = newval;
+			newStack.push(nval);
+			cout << pop2.Integer << " * " << pop1.Integer << endl;
 		}
 		else {
 			ItemType newItem;
-			newItem.Double = TokenizerParser::parseDouble(Str_Arr[index]);
+			newItem.Double = TokenizerParser::parseInt(Str_Arr[index]);
 			newStack.push(newItem);
 		}
-		// BOOKMARK - TO BE COMPLETED
 	}
+	return static_cast<double>(newStack.top().Double);
 }
 bool PostFixEval::isNumeric()
 {
-
+	return numeric;
 }
 void PostFixEval::findValue()
 {
-
+	cout << "--------------------" << endl;
+	cout << "please enter a postfix expression to be evaluated. Separate each character with whitespace."
+		<< endl;
+	string input;
+	getline(cin, input);
+	//cin.ignore(255, '\n');
+	value = evaluate();
 }
 void PostFixEval::print(ostream &out) const
 {
-
+	if (numeric) {
+		cout << "The result is numeric only" << endl;
+	}
+	else {
+		out << "Calculated Total: " << value << endl;
+	}
 }
 
 PostFixEval::~PostFixEval()

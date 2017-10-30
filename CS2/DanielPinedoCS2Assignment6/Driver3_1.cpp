@@ -3,100 +3,19 @@
 #include <string>
 using namespace std;
 
-void testInt();
-void testChar();
-void testFloat();
+
 void testString();
+void palindrome();
 
 int main()
 {
 
-	testInt();
-	//testChar();
-	//testFloat();
 	//testString();
-
+	palindrome();
 	return 0;
 }
 
-void testInt()
-{
-	ArrayQueue Int_ArrayQueue;
-	cout<<"We will enqueue some integers on the queue now.\n";
-	bool done = false;
-	int val = int();
-	while(!Int_ArrayQueue.isFull()&&!done)
-	{
-		cout<<"Please enter an integer to be enqueued : ";
-		cin>>val;
-		ItemType Value;
-		Value.Integer = val;
-		Int_ArrayQueue.enqueue(Value);
-		cout<<"More data? Enter 0 to continue and 1 to exit: ";
-		cin>>done;
-	}
 
-	cout<<"Now printing the integers in the Queue.\n";
-
-	while(!Int_ArrayQueue.isEmpty())
-	{
-		cout<<(Int_ArrayQueue.dequeue()).Integer<<"  ";
-	}
-
-	cout<<endl;
-}
-//---------------------------------------------------------------
-void testChar()
-{
-	ArrayQueue Char_ArrayQueue;
-	cout<<"We will enqueue some characters in the Queue now.\n";
-	bool done = false;
-	char val = char();
-	while(!Char_ArrayQueue.isFull()&&!done)
-	{
-		cout<<"Please enter an character to be put in the Queue : ";
-		cin>>val;
-		ItemType Value;
-		Value.Character = val;
-		Char_ArrayQueue.enqueue(Value);
-		cout<<"More data? Enter 0 to continue and 1 to exit: ";
-		cin>>done;
-	}
-
-	cout<<"Now printing the characters in the Queue.\n";
-
-	while(!Char_ArrayQueue.isEmpty())
-	{
-		cout<<(Char_ArrayQueue.dequeue()).Character<<"  ";
-	}
-	cout<<endl;
-}
-//-------------------------------------------------------------
-void testFloat()
-{
-	ArrayQueue Float_ArrayQueue;
-	cout<<"We will enqueue some floating point numbers in the Queue now.\n";
-	bool done = false;
-	float val = float();
-	while(!Float_ArrayQueue.isFull()&&!done)
-	{
-		cout<<"Please enter a floating point number to be added to the Queue : ";
-		cin>>val;
-		ItemType Value;
-		Value.Float = val;
-		Float_ArrayQueue.enqueue(Value);
-		cout<<"More data? Enter 0 to continue and 1 to exit: ";
-		cin>>done;
-	}
-
-	cout<<"Now printing the floating point numbers  in the Queue.\n";
-
-	while(!Float_ArrayQueue.isEmpty())
-	{
-		cout<<(Float_ArrayQueue.dequeue()).Float<<"  ";
-	}
-	cout<<endl;
-}
 //-------------------------------------------------------------
 void testString()
 {
@@ -125,19 +44,39 @@ void testString()
 }
 //---------------------------------------------------------------
 
-/*
-We will enqueue some integers on the queue now.
-Please enter an integer to be enqueued : 1
-More data? Enter 0 to continue and 1 to exit: 0
-Please enter an integer to be enqueued : 2
-More data? Enter 0 to continue and 1 to exit: 0
-Please enter an integer to be enqueued : 3
-More data? Enter 0 to continue and 1 to exit: 0
-Please enter an integer to be enqueued : 4
-More data? Enter 0 to continue and 1 to exit: 0
-Please enter an integer to be enqueued : 5
-More data? Enter 0 to continue and 1 to exit: 1
-Now printing the integers in the Queue.
-1  2  3  4  5
+void palindrome()
+{
+	ArrayQueue char_ArrayQueue;
+	cout << "We will enqueue some strings in the Queue now.\n";
+	cout << "How many strings do you want to enter now? ";
+	size_t numstrings;
+	cin >> numstrings;
+	size_t counter = 0;
+	string val = string();
+	cin.ignore(128, '\n');
+	while (!char_ArrayQueue.isFull() && (counter < numstrings))
+	{
+		cout << "Please enter a string to be added to the Queue: ";
+		getline(cin, val);
+		ItemType Value;
+		Value.string_data = val;
+		for (auto & c : val) {
+			if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+				Value.Character = c;
+				char_ArrayQueue.enqueue(Value);
+			}
+		}
 
-*/
+		while (!char_ArrayQueue.isEmpty())
+		{
+				cout << (char_ArrayQueue.dequeue()).Character;
+		}
+		cout << endl;
+		
+		counter++;
+	}
+
+	cout << "Now checking the strings in Queue.\n";
+
+	
+}
