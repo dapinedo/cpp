@@ -1,4 +1,5 @@
 #include "Arrayqueue.h"
+#include "Stack.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -12,6 +13,8 @@ int main()
 
 	//testString();
 	palindrome();
+
+	system("pause");
 	return 0;
 }
 
@@ -59,24 +62,34 @@ void palindrome()
 		cout << "Please enter a string to be added to the Queue: ";
 		getline(cin, val);
 		ItemType Value;
+		Stack palindromeStack;
+		size_t numofchars = 0;
 		Value.string_data = val;
 		for (auto & c : val) {
 			if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
-				Value.Character = c;
+				Value.Character = tolower(c);
+				cout << Value.Character << endl; // testing output to enqueue()
 				char_ArrayQueue.enqueue(Value);
+				palindromeStack.push(Value);
+				cout << palindromeStack.top().Character << endl; // testing output of push()
+				numofchars++;
 			}
 		}
-
-		while (!char_ArrayQueue.isEmpty())
-		{
-				cout << (char_ArrayQueue.dequeue()).Character;
+		numofchars = 0;
+		cout << endl << Value.string_data;
+		bool ispalindrome = true;
+		while (!char_ArrayQueue.isEmpty() && ispalindrome) {
+			if (char_ArrayQueue.dequeue().Character != palindromeStack.top().Character) {
+				cout << endl << "** IS NOT a palindrome **" << endl;
+				ispalindrome = false;
+			}
+			else {
+				palindromeStack.pop();
+			}
 		}
-		cout << endl;
-		
+		if (ispalindrome) {
+			cout << endl << "** IS a palindrome **" << endl;
+		}
 		counter++;
 	}
-
-	cout << "Now checking the strings in Queue.\n";
-
-	
 }
