@@ -21,9 +21,40 @@ int main()
 		print(E1);
 		print(E2);
 	}
-
 	system("pause");
 }
+
+/* OUTPUT BELOW
+From Default constructor.
+First Name: Not set
+Last Name: Not set
+Hours Worked: 0
+Pay Rate: 0
+Salary: 0
+
+From Default constructor.
+From Explicit constructor.
+From Copy constructor.
+First Name: John
+Last Name: Smith
+Hours Worked: 40
+Pay Rate: 37.5
+Salary: 65000
+
+From Destructor.
+From Copy constructor.
+First Name: John
+Last Name: Smith
+Hours Worked: 40
+Pay Rate: 37.5
+Salary: 65000
+
+From Destructor.
+From Destructor.
+From Destructor.
+From Destructor.
+Press any key to continue . . .
+*/
 
 void print(Employee E)
 {
