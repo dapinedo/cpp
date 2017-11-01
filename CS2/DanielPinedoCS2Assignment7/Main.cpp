@@ -8,16 +8,19 @@ void print(Employee E);
 
 int main()
 {
-	// testing Employee.toString()
-	Employee E;
-	cout << E.toString() << endl;
+	// curly braces unwinds the stack prior to end of program, so all destructor calls can be seen in output
+	{
+		// testing Employee.toString()
+		Employee E;
+		cout << E.toString() << endl;
 
-	// testing default/explicit/copy constructors and assignment operator
-	Employee E1;
-	Employee E2("John", "Smith", 40, 37.50, 65000.00);
-	E1 = E2;
-	print(E1);
-	print(E2);
+		// testing default/explicit/copy constructors and assignment operator
+		Employee E1;
+		Employee E2("John", "Smith", 40, 37.50, 65000.00);
+		E1 = E2;
+		print(E1);
+		print(E2);
+	}
 
 	system("pause");
 }
