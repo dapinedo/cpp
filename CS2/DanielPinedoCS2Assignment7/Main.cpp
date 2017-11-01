@@ -12,7 +12,7 @@ int main()
 	Employee E;
 	cout << E.toString() << endl;
 
-	// testing copy constructor and assignment operator
+	// testing default/explicit/copy constructors and assignment operator
 	Employee E1;
 	Employee E2("John", "Smith", 40, 37.50, 65000.00);
 	E1 = E2;
