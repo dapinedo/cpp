@@ -1,3 +1,6 @@
+// Daniel Pinedo
+// Assignment 7 - CS2
+
 #include "Stack.h"
 #include <iostream>
 using namespace std;

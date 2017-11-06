@@ -1,21 +1,81 @@
+// Daniel Pinedo
+// Assignment 7 - CS2
+
+
 #include "Stack.h"
 
-// public:
-/*
-Copy Constructor is a part of rule of three implementation. Default
-copy constructor provided by C++ only makes shallow copies. To make deep
-copies of data pointed to by a pointer and allocated dynamically at runtime
-a programmer defined copy constructor that would do that is needed.
-Copy Constructor is called automatically when a function would return a value
-of type Stack or when Stack object is passed by value to a function. Copy
-constructor should NOT be called by user code. Goal of copy constructor
-is to make deep copies of data which is pointed to by pointer when object
-is either passed to a function by value or returned as a value from a function.
-In order for me to confirm that your code works correctly, the below MUST be the
-Last line in your Copy Constructor code.
-cout << "From Stack Copy Constructor.\n";
-@param st is the Stack object being copied inside the copy constructor.
-*/
+void Stack::push(ItemType item)
+{
+	if (arrayCapacity > this->numItems)
+	{
+		cout << "**********>  Using the existing array to push. <******************* \n";
+		top_position++;
+		items[top_position] = item;
+		numItems++;
+		cout << "Number of items in stack now: " << numItems << endl;
+	}
+	else
+	{
+		cout << "**********> Expanding the array to push. <*******************\n";
+		
+		size_t len = arrayCapacity + GROWBY;
+		ItemType * Temp;
+
+		Temp = new ItemType[len];
+
+		for (size_t index = 0; index<this->numItems; index++)
+		{
+			Temp[index] = items[index];
+		}
+
+		delete[] items;
+		items = Temp;
+		Temp = nullptr;
+		arrayCapacity = len;
+		top_position++;
+		items[top_position] = item;
+		numItems++;
+		cout << "Number of items in stack now: " << numItems << endl;
+	}
+}
+void Stack::pop()
+{
+	if (isEmpty())
+	{
+		cerr << "The stack is empty.\n";
+		return;
+	}
+	else
+	{
+		top_position--;
+	}
+}
+ItemType Stack::top() const
+{
+	if (isEmpty())
+	{
+		throw "Stack is empty";
+	}
+	else
+	{
+		return items[top_position];
+	}
+}
+bool Stack::isEmpty() const
+{
+	return (numItems == 0);
+}
+
+Stack::Stack() : top_position(-1), items(new ItemType[MAX]),
+numItems(0), arrayCapacity(MAX)
+{
+}
+
+Stack::~Stack()
+{
+	delete[] items;
+}
+
 Stack::Stack(const Stack & st) : top_position(st.top_position), items(new ItemType(*(st.items))),
 	numItems(st.numItems), arrayCapacity(st.arrayCapacity)
 {
@@ -23,6 +83,15 @@ Stack::Stack(const Stack & st) : top_position(st.top_position), items(new ItemTy
 		cout << "Self copy is prohibited. Exiting." << endl;
 		exit(1);
 	}
+	this->top_position = st.top_position;
+	this->items = new ItemType[st.arrayCapacity];
+	for (size_t i = 0; i < st.arrayCapacity; i++)
+	{
+		this->items[i] = st.items[i];
+	}
+	this->numItems = st.numItems;
+	this->arrayCapacity = st.arrayCapacity;
+	
 	cout << "From Stack Copy Constructor.\n";
 }
 
@@ -48,13 +117,19 @@ cout << "From Stack Assignment operator.\n";
 */
 const Stack & Stack::operator = (const Stack & Stk)
 {
-	if (this == &Stk)
-		return *this;
-	delete this->items;
-	this->top_position = Stk.top_position;
-	this->items = new ItemType(*Stk.items);
-	this->numItems = Stk.numItems;
-	this->arrayCapacity = Stk.arrayCapacity;
+	if (this != &Stk)
+	{
+		delete[] items;
+		this->top_position = Stk.top_position;
+		this->items = new ItemType[Stk.arrayCapacity];
+		for (size_t i = 0; i < Stk.arrayCapacity; i++)
+		{
+			this->items[i] = Stk.items[i];
+		}
+		this->numItems = Stk.numItems;
+		this->arrayCapacity = Stk.arrayCapacity;
+	}
+
 	return *this;
 	cout << "From Stack Assignment operator.\n";
 }
@@ -83,7 +158,7 @@ size_t Stack::getNumItems() const
 	the code re-use technology.
 	@param Stk is the stack object to be copied to this Stack object.
 	*/
-	void copy(const Stack & Stk);
+	//void Stack::copy(const Stack & Stk);
 // private:
 	/*
 	Function isFull is not needed in the dynamically growing stack. However,
@@ -95,5 +170,7 @@ size_t Stack::getNumItems() const
 	function return false as the dynamically growing stack will never be full.
 	@return false because dynamically growing stack always has capacity to add more elements.
 	*/
-	bool isFull() const;
-};
+bool Stack::isFull() const
+{
+	return (numItems == arrayCapacity);
+}

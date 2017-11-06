@@ -6,7 +6,7 @@ following stand-alone function: void print(Employee E); print, simply prints E t
 */
 void print(Employee E);
 
-int main()
+int main1()
 {
 	// testing Employee.toString()
 	Employee E;
@@ -20,6 +20,7 @@ int main()
 	print(E2);
 
 	system("pause");
+	return 0;
 }
 
 void print(Employee E)
