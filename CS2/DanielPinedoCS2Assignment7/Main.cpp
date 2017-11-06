@@ -19,6 +19,7 @@ int main()
 	system("pause");
 	return 0;
 }
+
 //----------------------------------------------------------------
 void PopAndPrintStack(Stack Stk)
 {
@@ -26,34 +27,7 @@ void PopAndPrintStack(Stack Stk)
 	while (!Stk.isEmpty())
 	{
 		cout << Stk.top().Integer << " ";
-		Page 9 of 11
-			30
-			31
-			32
-			33
-			34
-			35
-			36
-			37
-			38
-			39
-			40
-			41
-			42
-			43
-			44
-			45
-			46
-			47
-			48
-			49
-			50
-			51
-			52
-			53
-			54
-			55
-			Stk.pop();
+		Stk.pop();
 	}
 	cout << endl;
 }
