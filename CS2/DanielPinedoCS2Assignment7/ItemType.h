@@ -3,6 +3,7 @@
 #define ITEMTYPE_H
 #include <string>
 using namespace std;
+
 class ItemType
 {
 public:
