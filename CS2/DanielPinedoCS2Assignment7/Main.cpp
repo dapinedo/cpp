@@ -1,5 +1,12 @@
-// Daniel Pinedo
-// Assignment 7 - CS2
+/*
+Name: Daniel Pinedo
+Class: CS 2 Section 0130
+Assignment #: 4
+All Compilers Used: VS17
+Operating Systems on Which Compiled: Win10
+Date and Time of Last successful run: 11/06/2017 @1600
+Email: d.p@ieee.org
+*/
 
 #include "Stack.h"
 #include <iostream>

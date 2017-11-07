@@ -1,5 +1,12 @@
-// Daniel Pinedo
-// Assignment 7 - CS2
+/*
+Name: Daniel Pinedo
+Class: CS 2 Section 0130
+Assignment #: 4
+All Compilers Used: VS17
+Operating Systems on Which Compiled: Win10
+Date and Time of Last successful run: 11/06/2017 @1600
+Email: d.p@ieee.org
+*/
 
 
 #include "Stack.h"
@@ -48,6 +55,7 @@ void Stack::pop()
 	else
 	{
 		top_position--;
+		numItems--;
 	}
 }
 ItemType Stack::top() const
@@ -76,8 +84,7 @@ Stack::~Stack()
 	delete[] items;
 }
 
-Stack::Stack(const Stack & st) : top_position(st.top_position), items(new ItemType(*(st.items))),
-	numItems(st.numItems), arrayCapacity(st.arrayCapacity)
+Stack::Stack(const Stack & st)
 {
 	if (this == &st) {
 		cout << "Self copy is prohibited. Exiting." << endl;
