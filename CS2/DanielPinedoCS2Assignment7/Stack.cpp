@@ -77,11 +77,13 @@ bool Stack::isEmpty() const
 Stack::Stack() : top_position(-1), items(new ItemType[MAX]),
 numItems(0), arrayCapacity(MAX)
 {
+	cout << "From Stack Constructor. \n";
 }
 
 Stack::~Stack()
 {
 	delete[] items;
+	cout << "From Stack Destructor.\n";
 }
 
 Stack::Stack(const Stack & st)
