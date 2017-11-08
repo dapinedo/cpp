@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{4A6F6AC9-E9CA-4982-862C-C7F471369B51}</ProjectGuid>
+    <ProjectGuid>{5116FE0A-D8E7-4F0D-99C1-4F21F1C71775}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -108,9 +108,6 @@
     <ClInclude Include="BankAccount.h" />
     <ClInclude Include="BankAccountLinkedList.h" />
     <ClInclude Include="Node.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="DanielPinedoCS2Assignment8.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

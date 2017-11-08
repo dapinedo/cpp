@@ -10,5 +10,5 @@ Node::Node(BankAccount B = BankAccount(), Node * N) : BA(B), Next(N)
 
 const string Node::toString() const
 {
-	return (BA.toString() + " ");
+	return (this->BA.toString() + " ");
 }

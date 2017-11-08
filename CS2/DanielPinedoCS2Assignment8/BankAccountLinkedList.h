@@ -13,6 +13,12 @@ struct BankAccountLinkedList
 	BankAccountLinkedList(const BankAccountLinkedList & Other);
 	//Rule 2. assignment operator
 	const BankAccountLinkedList & operator = (const BankAccountLinkedList & Other);
+	// helper function for Rule 1 and 2
+	void copy(const BankAccountLinkedList & Other);
+	// helper function for delete
+	void destroy();
+	// helper function for inserting new value
+	void insert(BankAccount BA);
 	//Rule 3. destructor
 	virtual ~BankAccountLinkedList();
 	const string toString() const;
