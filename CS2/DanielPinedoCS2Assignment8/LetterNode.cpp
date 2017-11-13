@@ -13,7 +13,7 @@ LetterNode::LetterNode(char ch, size_t frq, LetterNode * ptr) :
 const string LetterNode::toString()
 {
 	ostringstream toReturn;
-	toReturn << "The letter " << this->letter << "has occurred " << this->frequency << " times\n";
+	toReturn << "The letter " << this->letter << " has occurred " << this->frequency << " times\n";
 	return toReturn.str();
 }
 

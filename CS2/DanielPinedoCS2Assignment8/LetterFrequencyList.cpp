@@ -1,3 +1,10 @@
+/*
+Daniel Pinedo
+CS2
+Assignment 8
+11/13/2017
+*/
+
 #include "LetterFrequencyList.h"
 
 //private:
@@ -75,12 +82,30 @@ void LetterFrequencyList::insert(char ltr, size_t frq = 1)
 //if letter is not present then LetterNode is added in ascending order
 void LetterFrequencyList::insertInOrder(char ltr)
 {
+	LetterNode * newLetterNode = new LetterNode(ltr, 1, nullptr);
 	if (contains(ltr)) {
 		return;
 	}
-	else {
-		insert(ltr);
-	}
+	insert(ltr);
+
+    // ltr may be smaller than all the letters in the linked list so far or largest than all the letters in linked list
+	// if ltr < Headptr->Next->letter than add right after dummy node. Otherwise look for a node of a larger value
+	// and insert before that.
+
+	 // Below is failed code attempt for ascending order algorithm. Better luck next time
+	/* LetterNode * Current = Headptr;
+	while (Current != nullptr) {
+		if (ltr < Current->letter) {
+			LetterNode *Previous = Current;
+			delete Headptr;
+			Headptr = new LetterNode(ltr, 1, Current->Next);
+			Headptr->Next = Previous;
+		}
+		else {
+			insert(ltr);
+		}
+		Current = Current->Next;
+	} */
 }
 //Rule 3. destructor
 LetterFrequencyList::~LetterFrequencyList()

@@ -1,3 +1,11 @@
+/*
+Daniel Pinedo
+CS2
+Assignment 8
+11/13/2017
+*/
+
+
 #include "BankAccount.h"
 #include "BankAccountLinkedList.h"
 #include "LetterFrequencyList.h"
@@ -58,6 +66,39 @@ void frequencyLinkedList()
 		cout << "File failed to open\n";
 	}
 }
+// OUTPUT FROM FREQUENCYLINKEDLIST
+/*
+Enter full file path of file to get character frequencies: C:\Users\daniel_pinedo\source\repos\cpp\CS2\DanielPinedoCS2Assignment8\TesFrequencyOfAllCharacters.txt
+File opened!
+The letter X has occurred 2 times
+The letter Z has occurred 5 times
+The letter K has occurred 14 times
+The letter Q has occurred 11 times
+The letter F has occurred 89 times
+The letter J has occurred 10 times
+The letter W has occurred 60 times
+The letter B has occurred 53 times
+The letter M has occurred 121 times
+The letter H has occurred 188 times
+The letter G has occurred 85 times
+The letter T has occurred 454 times
+The letter C has occurred 134 times
+The letter D has occurred 200 times
+The letter N has occurred 363 times
+The letter Y has occurred 64 times
+The letter L has occurred 151 times
+The letter S has occurred 294 times
+The letter U has occurred 114 times
+The letter O has occurred 345 times
+The letter I has occurred 363 times
+The letter V has occurred 47 times
+The letter E has occurred 537 times
+The letter R has occurred 296 times
+The letter P has occurred 89 times
+The letter A has occurred 383 times
+*/
+
+
 //--------------------------------------------------------------
 //OUTPUT FROM BANKLINKEDLIST
 /*
