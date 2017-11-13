@@ -101,12 +101,16 @@
   <ItemGroup>
     <ClCompile Include="BankAccount.cpp" />
     <ClCompile Include="BankAccountLinkedList.cpp" />
+    <ClCompile Include="LetterFrequencyList.cpp" />
+    <ClCompile Include="LetterNode.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Node.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BankAccount.h" />
     <ClInclude Include="BankAccountLinkedList.h" />
+    <ClInclude Include="LetterFrequencyList.h" />
+    <ClInclude Include="LetterNode.h" />
     <ClInclude Include="Node.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

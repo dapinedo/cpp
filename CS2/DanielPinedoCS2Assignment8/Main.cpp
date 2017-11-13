@@ -1,18 +1,22 @@
 #include "BankAccount.h"
 #include "BankAccountLinkedList.h"
+#include "LetterFrequencyList.h"
 
 
-// independent stack for executing linked list commands
-void showstack();
+// test linked list of bankaccount
+void bankLinkedList();
+// frequency linked list of characters in a text file
+void frequencyLinkedList();
 
 int main() 
 {
-	showstack();
+	//bankLinkedList();
+	frequencyLinkedList();
 	return 0;
 	system("pause");
 }
 
-void showstack()
+void bankLinkedList()
 {
 	// insert five BankAccounts in the Linked list and print linked list
 	BankAccountLinkedList LL;
@@ -28,8 +32,34 @@ void showstack()
 	LL.insert(B5);
 	cout << LL.toString() << endl;
 }
+
+void frequencyLinkedList()
+{
+	LetterFrequencyList LFL;
+	cout << "Enter full file path of file to get character frequencies: ";
+	string in = "";
+	getline(cin, in);
+	ifstream inFile;
+	inFile.open(in);
+	if (inFile.is_open()) {
+		cout << "File opened!\n";
+		while (inFile.peek() !=EOF) {
+			char read;
+			inFile >> read;
+			read = toupper(read);
+			if (read >= 'A' && read <= 'Z') {
+				LFL.insertInOrder(read);
+			}
+		}
+		inFile.close();
+		cout << LFL.toString();
+	}
+	else { 
+		cout << "File failed to open\n";
+	}
+}
 //--------------------------------------------------------------
-//OUTPUT FROM MAIN
+//OUTPUT FROM BANKLINKEDLIST
 /*
 From constructor.
 Name: Jim Smithson
