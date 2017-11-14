@@ -1,9 +1,9 @@
-#C++
+ # C++
 
-##[CS1]((https://github.com/dapinedo/cpp/tree/master/CS1) = Intro
+## [CS1](https://github.com/dapinedo/cpp/tree/master/CS1) = Intro
 
-##[CS2](https://github.com/dapinedo/cpp/tree/master/CS2) = Data Structures
-####Assignments
+## [CS2](https://github.com/dapinedo/cpp/tree/master/CS2) = Data Structures
+#### Assignments
 1. [Intro Review](https://github.com/dapinedo/cpp/tree/master/CS2/DanielPinedoCS2Assignment1)
 2. [Classes and static functions](https://github.com/dapinedo/cpp/tree/master/CS2/DanielPinedoCS2Assignment2)
 3. [GCD and Operator Overloading](https://github.com/dapinedo/cpp/tree/master/CS2/DanielPinedoCS2Assignment3)
