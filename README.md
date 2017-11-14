@@ -1,8 +1,8 @@
  # C++
 
-## [CS1](https://github.com/dapinedo/cpp/tree/master/CS1) = Intro
+## [Intro](https://github.com/dapinedo/cpp/tree/master/CS1)
 
-## [CS2](https://github.com/dapinedo/cpp/tree/master/CS2) = Data Structures
+## [Data Structures](https://github.com/dapinedo/cpp/tree/master/CS2)
 #### Assignments
 1. [Intro Review](https://github.com/dapinedo/cpp/tree/master/CS2/DanielPinedoCS2Assignment1)
 2. [Classes and static functions](https://github.com/dapinedo/cpp/tree/master/CS2/DanielPinedoCS2Assignment2)
