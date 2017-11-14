@@ -82,30 +82,30 @@ void LetterFrequencyList::insert(char ltr, size_t frq = 1)
 //if letter is not present then LetterNode is added in ascending order
 void LetterFrequencyList::insertInOrder(char ltr)
 {
-	LetterNode * newLetterNode = new LetterNode(ltr, 1, nullptr);
+	//condition #0 - frequency update if letter already exists in the list
 	if (contains(ltr)) {
 		return;
 	}
-	insert(ltr);
-
-    // ltr may be smaller than all the letters in the linked list so far or largest than all the letters in linked list
-	// if ltr < Headptr->Next->letter than add right after dummy node. Otherwise look for a node of a larger value
-	// and insert before that.
-
-	 // Below is failed code attempt for ascending order algorithm. Better luck next time
-	/* LetterNode * Current = Headptr;
-	while (Current != nullptr) {
-		if (ltr < Current->letter) {
-			LetterNode *Previous = Current;
-			delete Headptr;
-			Headptr = new LetterNode(ltr, 1, Current->Next);
-			Headptr->Next = Previous;
+	//condition #1 - Special case for Head Pointer
+	//or
+	//condition #2 - if latest insertion is greater than current, then insert new node at Headptr->Next
+	if (Headptr->Next == nullptr || Headptr->Next->letter > ltr) {
+		insert(ltr);
+		return;
+	}
+	//condition #3 - Locate node before point of insertion
+	else {
+		LetterNode * Iterator = Headptr->Next;
+		LetterNode * Previous = nullptr;
+		//iterate through list until greater value than ltr is found
+		while (Iterator != nullptr && Iterator->letter < ltr) {
+			Previous = Iterator;
+			/*cout << "Iterator " << Iterator->letter << " is less than " << ltr 
+					<< " at address " << &Iterator << '\n';*/ //comment this line for verbose testing loop/condition
+			Iterator = Iterator->Next;
 		}
-		else {
-			insert(ltr);
-		}
-		Current = Current->Next;
-	} */
+		Previous->Next = new LetterNode(ltr, 1, Previous->Next);
+	}
 }
 //Rule 3. destructor
 LetterFrequencyList::~LetterFrequencyList()
