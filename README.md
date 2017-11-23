@@ -12,5 +12,5 @@
 6. [Interfaces, Stacks, Queues](https://github.com/dapinedo/cpp/tree/master/CS2/DanielPinedoCS2Assignment6)
 7. [Dynamic memory allocation, self-growing stack](https://github.com/dapinedo/cpp/tree/master/CS2/DanielPinedoCS2Assignment7)
 8. [Linked list, insert sort](https://github.com/dapinedo/cpp/tree/master/CS2/DanielPinedoCS2Assignment8)
-9.
+9. [Templated Classes](https://github.com/dapinedo/cpp/tree/master/CS2/DanielPinedoCS2Assignment9)
 10.
