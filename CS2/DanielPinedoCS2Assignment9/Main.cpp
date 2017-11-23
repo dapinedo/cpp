@@ -8,41 +8,77 @@ Templated Growing Stack
 #include "StackInterface.h"
 #include "BankAccount.h"
 
+/*
+Push five of each on to their respective types of stacks:
+Five ints on int type stack
+Five chars on char type stack
+Five strings on string type stack
+Five BankAccounts on BankAccount type stack.
+Using loop, top and pop all of above stacks and output the topped value to the console.
+*/
+
 int main()
 {
-	Stack<string> stk1;
-	Stack<double> stk2;
-	Stack<BankAccount> stk3;
-	// create objects to be inserted into BankAccount object and pushed to Stack
-	string acctnum = "1234";
-	string fname = "Jane";
-	string lname = "Smith";
-	double balance = 75.43;
-	// create BankAccount objects
+	//initialize Stacks
+	Stack<int> sInt;
+	Stack<char> sChar;
+	Stack<string> sString;
+	Stack<BankAccount> sBankAccount;
+
+	//create BankAccount objects
 	BankAccount B1;
-	BankAccount B2(acctnum, fname, lname, balance);
+	BankAccount B2("01234", "John", "Smith", 34.56);
+	BankAccount B3("43210", "Jane", "Smithers", 56.78);
+	BankAccount B4("98765", "Greg", "McGregor", 78.89);
+	BankAccount B5("56789", "Jill", "Jillian", 98.54);
 
 	// push to templated Stacks;
-	stk1.push(acctnum);
-	stk1.push(fname);
-	stk1.push(lname);
-	stk2.push(balance);
-	stk3.push(B1);
-	stk3.push(B2);
-
+	for (int i = 0; i < 5; i++) {
+		sInt.push(i);
+	}
+	for (int i = 0; i < 5; i++) {
+		sChar.push('a' + i);
+	}
+	sString.push("red");
+	sString.push("orange");
+	sString.push("yellow");
+	sString.push("green");
+	sString.push("blue");
+	sBankAccount.push(B1);
+	sBankAccount.push(B2);
+	sBankAccount.push(B3);
+	sBankAccount.push(B4);
+	sBankAccount.push(B5);
+	
 	// print top of stacks and pop stacks
-	cout << stk1.top() << endl;
-	stk1.pop();
-	cout << stk1.top() << endl;
-	stk1.pop();
-	cout << stk1.top() << endl;
-	stk1.pop();
-	cout << stk2.top() << endl;
-	stk2.pop();
-	cout << stk3.top() << endl;
-	stk3.pop(); 
-	cout << stk3.top() << endl;
-	stk3.pop();
+	cout << "Top and Pop of Integer Stack" << endl;
+	cout << "-------------------------" << endl;
+	for (int i = 0; i < 5; i++) {
+		cout << sInt.top() << endl;
+		sInt.pop();
+	}
+	cout << endl;
+	cout << "Top and Pop of Char Stack" << endl;
+	cout << "-------------------------" << endl;
+	for (int i = 0; i < 5; i++) {
+		cout << sChar.top() << endl;
+		sChar.pop();
+	}
+	cout << endl;
+	cout << "Top and Pop of String Stack" << endl;
+	cout << "-------------------------" << endl;
+	for (int i = 0; i < 5; i++) {
+		cout << sString.top() << endl;
+		sString.pop();
+	}
+	cout << endl;
+	cout << "Top and Pop of BankAccount Stack" << endl;
+	cout << "-------------------------" << endl;
+	for (int i = 0; i < 5; i++) {
+		cout << sBankAccount.top() << endl;
+		sBankAccount.pop();
+	}
+	cout << endl;
 
 	system("pause");
 	return 0;
@@ -50,32 +86,52 @@ int main()
 
 //OUTPUT BELOW
 /*
-From Stack Constructor.
-From Stack Constructor.
-From Stack Constructor.
-**********>  Using the existing array to push. <*******************
-Number of items in stack now: 1
-**********> Expanding the array to push. <*******************
-Number of items in stack now: 2
-**********> Expanding the array to push. <*******************
-Number of items in stack now: 3
-**********>  Using the existing array to push. <*******************
-Number of items in stack now: 1
-**********>  Using the existing array to push. <*******************
-Number of items in stack now: 1
-**********> Expanding the array to push. <*******************
-Number of items in stack now: 2
-Smith
-Jane
-1234
-75.43
-Name: Jane Smith
-Account #: 1234
-Balance: $75.43
+Top and Pop of Integer Stack
+-------------------------
+4
+3
+2
+1
+0
+
+Top and Pop of Char Stack
+-------------------------
+e
+d
+c
+b
+a
+
+Top and Pop of String Stack
+-------------------------
+blue
+green
+yellow
+orange
+red
+
+Top and Pop of BankAccount Stack
+-------------------------
+Name: Jill Jillian
+Account #: 56789
+Balance: $98.54
+
+Name: Greg McGregor
+Account #: 98765
+Balance: $78.89
+
+Name: Jane Smithers
+Account #: 43210
+Balance: $56.78
+
+Name: John Smith
+Account #: 01234
+Balance: $34.56
 
 Name: first name not set last name not set
 Account #: not set
 Balance: $0.00
+
 
 Press any key to continue . . .
 */
