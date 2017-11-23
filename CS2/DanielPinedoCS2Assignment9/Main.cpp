@@ -1,6 +1,16 @@
 /*
 Author: Daniel Pinedo
 Templated Growing Stack
+
+Remember, for this type of template, the template itself
+resides in the file directory structure, but is not 
+included in VS17 solution or solution tree. For this project,
+these files include:
+
+StackInterface.h
+Stack.h
+Stack.cpp
+
 */
 
 #include <string>
